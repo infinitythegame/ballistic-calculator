@@ -1,0 +1,7 @@
+'use strict';
+
+import Ammo from '/js/src/Ammo.js';
+
+export const normal = new Ammo('Normal', 'N');
+export const ap = new Ammo('Armour Piercing', 'AP');
+export const stun = new Ammo('Stun', 'Stun');
