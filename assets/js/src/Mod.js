@@ -17,6 +17,10 @@ export default class Mod {
     return this[val];
   }
 
+  result(val) {
+    return this.val + val;
+  }
+
   valueOf() {
     return this.val;
   }

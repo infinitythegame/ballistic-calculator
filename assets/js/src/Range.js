@@ -1,22 +1,28 @@
 'use strict';
 
+import Band from '/js/src/Range/Band.js';
+
 const short = Symbol('short');
 const medium = Symbol('medium');
 const long = Symbol('long');
 const max = Symbol('max');
 
-import Band from '/js/src/Range/Band.js';
-
 export default class Range {
-  constructor(
-    ...arrBands
-  ) {
-    let bands = Array.from(new Set(
-      arrBands.filter((band) => {
-        return (band instanceof Band);
-      }))
-    );
+  static fromValues(...bands) {
+    let start = 0;
+    return new Range(bands.map((band) => {
+      let end = band[0];
+      band = new Band(start, end, band[1]);
+      start = end;
+      return band;
+    }));
+  }
 
+  static fromBands(...bands) {
+    return new Range(bands);
+  }
+
+  constructor(bands) {
     bands.forEach((band, index, ranges) => {
       let noClash = ranges.filter((b, i) => {
          return (index != i);
