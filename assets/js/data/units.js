@@ -1,6 +1,6 @@
 'use strict';
 
-import {attributes as attr} from '/js/attributes.js';
+import {attributes as attr} from '/js/data/attributes.js';
 import Statline from '/js/src/Profile/Statline.js';
 
 export const Ghulam = Statline.fromValues(

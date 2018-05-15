@@ -1,7 +1,7 @@
 'use strict';
 
- import * as attr from '/js/attributes.js';
- import * as mods from '/js/mods.js';
+ import * as attr from '/js/data/attributes.js';
+ import * as mods from '/js/data/mods.js';
  import ModStack from '/js/src/Calculator/ModStack.js';
 
 // import Band from '/js/src/Range/Band.js';
@@ -16,8 +16,8 @@ import Profile from '/js/src/Profile.js';
 // import Stat from '/js/src/Profile/Stat.js';
 // import Statline from '/js/src/Profile/Statline.js';
 
-import {Ghulam, Sekban} from '/js/units.js';
-import {flashPulse, boardingShotgun} from '/js/weapons.js';
+import {Ghulam, Sekban} from '/js/data/units.js';
+import {flashPulse, boardingShotgun} from '/js/data/weapons.js';
 
 let profileGhulam = new Profile(Ghulam);
 let profileSekban = new Profile(Sekban);
