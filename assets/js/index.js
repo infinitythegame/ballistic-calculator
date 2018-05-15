@@ -52,6 +52,8 @@ let modesInRange = flashPulse.modesInRange(8);
 //   alert(mode.band.mod);
 // });
 
+console.log(modesInRange[0].mode.range.toString());
+
 let modStack = ModStack.fromMods(
   modesInRange[0].mod,
   //cover,

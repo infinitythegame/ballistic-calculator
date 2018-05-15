@@ -45,7 +45,7 @@ export default class Weapon {
   }
 }
 
-function compareRangeMods(bandA, bandB) {
+const compareRangeMods = (bandA, bandB) => {
   if (bandA.mod > bandB.mod) {
     return -1;
   }

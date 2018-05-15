@@ -83,12 +83,7 @@ export default class Range {
   }
 
   toString() {
-    let start = 0;
-    let end   = 0;
-    this.bands.forEach((band) => {
-      start = (band.start > start) ? start : band.start;
-      end   = (band.end > end) ? band.end : end;
-    });
-    return start + '-' + end;
+    let bands = Array.from(this.bands.values());
+    return bands.shift().start + '-' + bands.pop().end;
   }
 }
