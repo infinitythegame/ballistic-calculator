@@ -6,6 +6,8 @@ const burst = Symbol('burst');
 const damage = Symbol('damage');
 const special = Symbol('special');
 
+import ModeBand from './ModeBand.js';
+
 export default class Mode {
   constructor(_ammo, _range, _burst, _damage, _special = null) {
     this[ammo] = _ammo;
@@ -13,6 +15,10 @@ export default class Mode {
     this[burst] = _burst;
     this[damage] = _damage;
     this[special] = _special;
+  }
+
+  *[Symbol.iterator]() {
+    yield* this.range.bands;
   }
 
   get ammo() {
@@ -33,5 +39,12 @@ export default class Mode {
 
   get special() {
     return this[special];
+  }
+
+  inRange(distance) {
+    let band = this.range.in(distance);
+    if (band) {
+      return new ModeBand(this, band);
+    }
   }
 }

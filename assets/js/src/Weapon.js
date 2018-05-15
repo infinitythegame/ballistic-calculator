@@ -24,7 +24,34 @@ export default class Weapon {
     return this[modes];
   }
 
+  *[Symbol.iterator]() {
+    yield* this.modes;
+  }
+
+  modesInRange(distance) {
+    let modesInRange = new Set();
+    this.modes.forEach((mode) => {
+      let modeBand = mode.inRange(distance);
+      if (modeBand) {
+        modesInRange.add(modeBand);
+      }
+    });
+
+    return Array.from(modesInRange).sort(compareRangeMods);
+  }
+
   toString() {
     return this.name;
   }
+}
+
+function compareRangeMods(bandA, bandB) {
+  if (bandA.mod > bandB.mod) {
+    return -1;
+  }
+  if (bandB.mod > bandA.mod) {
+    return 1;
+  }
+
+  return 0;
 }

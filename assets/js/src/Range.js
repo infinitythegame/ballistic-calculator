@@ -5,7 +5,7 @@ const medium = Symbol('medium');
 const long = Symbol('long');
 const max = Symbol('max');
 
-import Band from './Range/Band.js';
+import Band from '/js/src/Range/Band.js';
 
 export default class Range {
   constructor(
@@ -37,14 +37,18 @@ export default class Range {
     });
   }
 
+  *[Symbol.iterator]() {
+    yield* this.bands;
+  }
+
   get bands() {
-    return new Set([
-      this.short,
-      this.medium,
-      this.long,
-      this.max
+    return new Map([
+      ['short', this.short],
+      ['medium', this.medium],
+      ['long', this.long],
+      ['max', this.max]
       ].filter((band) => {
-      return (band instanceof Band);
+      return (band[1] instanceof Band);
     }));
   }
 
