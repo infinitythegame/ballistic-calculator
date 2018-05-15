@@ -28,7 +28,7 @@ export default class Weapon {
     yield* this.modes;
   }
 
-  modesInRange(distance) {
+  modesInRange(profile, distance) {
     let modesInRange = new Set();
     this.modes.forEach((mode) => {
       let modeBand = mode.inRange(distance);

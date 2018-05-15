@@ -1,6 +1,7 @@
 'use strict';
 
  import * as attr from '/js/attributes.js';
+ import * as mods from '/js/mods.js';
 
 // import Band from '/js/src/Range/Band.js';
 // import Range from '/js/src/Range.js';
@@ -9,7 +10,6 @@
 // import Mode from '/js/src/Weapon/Mode.js';
 //
 import Profile from '/js/src/Profile.js';
-import Mod from '/js/src/Mod.js';
 
 //
 // import Stat from '/js/src/Profile/Stat.js';
@@ -48,10 +48,6 @@ import ModStack from '/js/src/Calculator/ModStack.js';
 
 let modesInRange = flashPulse.modesInRange(8);
 
-const cover = new Mod('Cover', -3);
-const targeted = new Mod('Targeted', 3);
-const marksmanshipLvlX = new Mod('MarksmanshipLvlX', 6);
-
 // modesInRange.forEach((mode) => {
 //   alert(mode.band.mod);
 // });
@@ -59,8 +55,8 @@ const marksmanshipLvlX = new Mod('MarksmanshipLvlX', 6);
 let modStack = ModStack.fromMods(
   modesInRange[0].mod,
   //cover,
-  targeted,
-  marksmanshipLvlX
+  mods.targeted,
+  mods.marksmanshipLvlX
 );
 
 console.log(modStack.stat(profile.statFor(attr.wip)));
