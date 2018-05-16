@@ -16,14 +16,35 @@ export default class Trooper {
   }
 
   get weapons() {
-    return this[weapons];
+    return Array.from(this[weapons]);
   }
 
   get profile() {
     return this[profile];
   }
 
+  *weaponModesInRange(distance) {
+    let modes = new Set();
+    this.weapons.forEach((weapon) => {
+      weapon.modesInRange(distance).forEach((modeBand) => {
+        modes.add(modeBand);
+      });
+    });
+    yield* Array.from(modes).sort(compareRangeMods);
+  }
+
   toString() {
     return this.name;
   }
+}
+
+const compareRangeMods = (bandA, bandB) =>{
+  if (bandA.mod > bandB.mod) {
+    return -1;
+  }
+  if (bandB.mod > bandA.mod) {
+    return 1;
+  }
+
+  return 0;
 }

@@ -37,21 +37,10 @@ export default class Weapon {
       }
     });
 
-    return Array.from(modesInRange).sort(compareRangeMods);
+    return Array.from(modesInRange);
   }
 
   toString() {
     return this.name;
   }
-}
-
-const compareRangeMods = (bandA, bandB) => {
-  if (bandA.mod > bandB.mod) {
-    return -1;
-  }
-  if (bandB.mod > bandA.mod) {
-    return 1;
-  }
-
-  return 0;
 }

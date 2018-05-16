@@ -2,8 +2,47 @@
   <html>
     <head>
       <script src="./js/index.js" type="module"></script>
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
+      <style>
+        div {
+          background-color: #eee;
+          text-align: center;
+        }
+      </style>
     </head>
     <body>
+      <form id="calculator" class="pure-form pure-form-stacked">
+        <div id="profiles" class="pure-g">
+          <div id="shooter" class="pure-u-1-1">
+            Shooter
+          </div>
+          <div id="target" class="pure-u-1-1">
+            Target
+          </div>
+        </div>
+        <div id="mod-cover" class="pure-g">
+          <div id="in-cover" class="pure-u-1-2">
+            In cover
+          </div>
+          <div id="exposed" class="pure-u-1-2">
+            Out of cover
+          </div>
+        </div>
+        <div id="mod-fireteam" class="pure-g">
+          <div id="no-fireteam" class="pure-u-1-4">
+            None
+          </div>
+          <div id="fireteam-3" class="pure-u-1-4">
+            3
+          </div>
+          <div id="no-fireteam" class="pure-u-1-4">
+            4
+          </div>
+          <div id="no-fireteam" class="pure-u-1-4">
+            5
+          </div>
+        </div>
 
+      </form>
     </body>
   </html>

@@ -1,6 +1,7 @@
 'use strict';
 
 import Band from '/js/src/Range/Band.js';
+import Value from '/js/src/Value.js';
 
 const short = Symbol('short');
 const medium = Symbol('medium');
@@ -9,9 +10,9 @@ const max = Symbol('max');
 
 export default class Range {
   static fromValues(...bands) {
-    let start = 0;
+    let start = new Value(0);
     return new Range(bands.map((band) => {
-      let end = band[0];
+      let end = Value.toVal(band[0]);
       band = new Band(start, end, band[1]);
       start = end;
       return band;
@@ -75,6 +76,7 @@ export default class Range {
   }
 
   in(distance) {
+    distance = Value.toVal(distance);
     return Array.from(this.bands.values()).find((band) => {
       if (band.in(distance)) {
         return band;

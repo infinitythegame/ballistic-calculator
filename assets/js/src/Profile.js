@@ -9,6 +9,10 @@ export default class Profile {
     this[inventory] = _inventory;
   }
 
+  *[Symbol.iterator]() {
+    yield* this.statline;
+  }
+
   get statline() {
     return this[statline];
   }

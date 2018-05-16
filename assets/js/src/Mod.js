@@ -3,10 +3,12 @@
 const name = Symbol('name');
 const val = Symbol('val');
 
+import Value from '/js/src/Value.js';
+
 export default class Mod {
   constructor(_name, _val) {
     this[name] = _name;
-    this[val] = _val;
+    this[val] = Value.toVal(_val);
   }
 
   get name() {

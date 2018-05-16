@@ -4,13 +4,14 @@ const start = Symbol('start');
 const end = Symbol('end');
 const mod = Symbol('mod');
 
-import Mod from './../Mod.js';
+import Value from '/js/src/Value.js';
+import Mod from '/js/src/Mod.js';
 
 export default class Band {
   static fromValues(start, end, mod) {
-    if (!mod instanceof Mod) {
-      mod = new Mod('Range', mod);
-    }
+    start = Value.toVal(start);
+    end = Value.toVal(end);
+    mod = new Mod('Range', mod);
     return new Band(start, end, mod);
   }
 
@@ -37,6 +38,7 @@ export default class Band {
   }
 
   in(range) {
+    range = Value.toVal(range);
     return range >= this.start && range < this.end;
   }
 
