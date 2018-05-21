@@ -1,5 +1,116 @@
-body {
-  margin: 0;
+html, body {
+  font-family: 'Righteous', sans-serif;
+}
+
+#Calculator {
+  font-size: 50%;
+}
+
+.trooper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.profile {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.attributes, .stats {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.trooper .name {
+  text-align: left;
+}
+
+#weapons {
+  width: 100%;
+  background-color: #000;
+  font-size: 25%;
+}
+
+.rangeBands .standard {
+  grid-area: standard-range;
+}
+
+.rangeBands .extreme {
+  grid-area: extreme-range;
+}
+
+.rangeBands {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr) repeat(12, 0.5fr);
+}
+
+th.rangeBands #first {
+  text-align: left;
+}
+
+th.rangeBands {
+  text-indent: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+th.rangeBands .active {
+  text-align: right;
+}
+
+
+th.rangeBands .active {
+  color: #fff;
+  visibility: visible;
+}
+
+.Weapon-name {
+  text-align: left;
+}
+
+#weapons tbody {
+  color: #fff;
+  text-align: center;
+}
+
+.rangeBands .band {
+  border-right: 1px solid #000;
+}
+
+.rangeBands .range-8 {
+  grid-column: span 2;
+}
+
+.rangeBands .range-16 {
+  grid-column: span 4;
+}
+
+.rangeBands .range-24 {
+  grid-column: span 6;
+}
+
+.rangeBands .range-32 {
+  grid-column: span 8;
+}
+.rangeBands .range-48 {
+  grid-column: span 12;
+}
+
+.rangeBands .good {
+  background-color: green;
+}
+
+.rangeBands .zero {
+  background-color: blue;
+}
+
+.rangeBands .bad {
+  background-color: yellow;
+  color: #000;
+}
+
+.rangeBands .worst {
+  background-color: red;
+  color: #000;
 }

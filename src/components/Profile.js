@@ -3,20 +3,17 @@ import React, { Component } from 'react';
 export default class Profile extends Component {
   render() {
     return (
-      <table id={this.props.type}>
-        <thead>
-          <tr>
-            <th>&nbsp;</th>
+      <div id={this.props.type} className="trooper">
+        <div className="name">{this.props.trooper.toString()}</div>
+        <div className="profile">
+          <div className="attributes">
             <Attr profile={this.props.trooper.profile} />
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{this.props.trooper.toString()}</td>
+          </div>
+          <div className="stats">
             <Stats profile={this.props.trooper.profile} />
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+      </div>
     );
   }
 }
@@ -24,8 +21,7 @@ export default class Profile extends Component {
 function Attr(props) {
   const attr = function*() {
     for (let stat of props.profile) {
-      console.log(stat);
-      yield <th key={stat.attribute.toString()}>{stat.attribute.toString()}</th>
+      yield <div className="attribute" key={stat.attribute.toString()}>{stat.attribute.toString()}</div>
     }
   };
 
@@ -35,8 +31,7 @@ function Attr(props) {
 function Stats(props) {
   const stats = function*() {
     for (let stat of props.profile) {
-      console.log(stat);
-      yield <td key={stat.toString()}>{stat.value.toString()}</td>
+      yield <div key={stat.toString()}>{stat.value.toString()}</div>
     }
   };
 

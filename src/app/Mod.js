@@ -1,5 +1,4 @@
 
-
 import Value from './Value';
 
 const name = Symbol('name');
@@ -24,7 +23,7 @@ export default class Mod {
   }
 
   valueOf() {
-    return this.val;
+    return 0 + this.val;
   }
 
   toString() {

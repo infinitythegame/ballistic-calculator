@@ -8,11 +8,11 @@ const end = Symbol('end');
 const mod = Symbol('mod');
 
 export default class Band {
-  static fromValues(start, end, mod) {
-    start = Value.toVal(start);
-    end = Value.toVal(end);
-    mod = new Mod('Range', mod);
-    return new Band(start, end, mod);
+  static fromValues(_start, _end, _mod) {
+    _start = Value.toVal(_start);
+    _end = Value.toVal(_end);
+    _mod = new Mod('Range', _mod);
+    return new Band(_start, _end, _mod);
   }
 
   constructor(_start, _end, _mod) {
@@ -35,6 +35,10 @@ export default class Band {
 
   get mod() {
     return this[mod];
+  }
+
+  get length() {
+    return this.end - this.start;
   }
 
   in(range) {

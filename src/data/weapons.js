@@ -4,7 +4,7 @@ import Weapon from './../app/Weapon';
 import Mode from './../app/Weapon/Mode';
 import Range from './../app/Range.js';
 
-import {stun, normal, ap} from './ammo.js';
+import {flash, normal, ap} from './ammo.js';
 
 export const pistol = new Weapon(
   'Pistol',
@@ -19,7 +19,7 @@ export const pistol = new Weapon(
 export const flashPulse = new Weapon(
   'Flash Pulse',
   new Mode(
-    stun,
+    flash,
     Range.fromValues([8, 0], [24, 3], [48, -3], [96, -6]),
     1,
     13
@@ -55,7 +55,7 @@ export const boardingShotgun = new Weapon(
 );
 
 export const rifle = new Weapon(
-  'Combi rifle',
+  'Rifle',
   new Mode(
     normal,
     Range.fromValues([8, 0], [16, 3], [32, -3], [48, -6]),

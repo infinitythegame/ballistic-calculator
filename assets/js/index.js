@@ -1,8 +1,10 @@
 'use strict';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
- import * as attr from '/js/data/attributes.js';
- import * as mods from '/js/data/mods.js';
- import ModStack from '/js/src/Calculator/ModStack.js';
+import * as attr from '/js/data/attributes.js';
+import * as mods from '/js/data/mods.js';
+import ModStack from '/js/src/Calculator/ModStack.js';
 
 // import Band from '/js/src/Range/Band.js';
 // import Range from '/js/src/Range.js';

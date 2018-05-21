@@ -13,7 +13,7 @@ export default class Range {
     let start = new Value(0);
     return new Range(bands.map((band) => {
       let end = Value.toVal(band[0]);
-      band = new Band(start, end, band[1]);
+      band = Band.fromValues(start, end, band[1]);
       start = end;
       return band;
     }));
