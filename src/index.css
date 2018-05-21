@@ -3,18 +3,16 @@ html, body {
 }
 
 #Calculator {
-  font-size: 50%;
+  font-size: 0.6rem;
 }
 
 .trooper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
 }
 
 .profile {
   display: grid;
-  grid-template-rows: 1fr;
 }
 
 .attributes, .stats {
@@ -30,7 +28,10 @@ html, body {
 #weapons {
   width: 100%;
   background-color: #000;
-  font-size: 25%;
+}
+
+#weapons th {
+  color: #fff;
 }
 
 .rangeBands .standard {
@@ -55,14 +56,11 @@ th.rangeBands {
   padding: 0;
 }
 
-th.rangeBands .active {
-  text-align: right;
-}
-
-
-th.rangeBands .active {
-  color: #fff;
+th.rangeBands div {
   visibility: visible;
+  direction: rtl;
+  text-align: right;
+  text-indent: -0.5em;
 }
 
 .Weapon-name {
@@ -113,4 +111,35 @@ th.rangeBands .active {
 .rangeBands .worst {
   background-color: red;
   color: #000;
+}
+
+#cover {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(50px, max-content);
+  text-align: center;
+}
+
+#cover input {
+  display: inline-block;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  text-align: center;
+}
+
+#result {
+  display: grid;
+  text-align: center;
+  font-size: 3rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#result #crit {
+  grid-column: span 2;
+  font-size: 1rem;
 }

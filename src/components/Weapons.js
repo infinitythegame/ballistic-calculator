@@ -13,30 +13,12 @@ export default class Profile extends Component {
           <tr>
             <th id="name">Name</th>
             <th className="rangeBands">
-                <div id="first" className="active">0</div>
-                <div className="active">8</div>
-                <div>12</div>
-                <div className="active">16</div>
-                <div>20</div>
-                <div className="active">24</div>
-                <div>28</div>
-                <div className="active">32</div>
-                <div>36</div>
-                <div>40</div>
-                <div>44</div>
-                <div className="active">48</div>
-                <div>52</div>
-                <div>56</div>
-                <div>60</div>
-                <div>64</div>
-                <div>68</div>
-                <div>72</div>
-                <div>76</div>
-                <div>80</div>
-                <div>84</div>
-                <div>88</div>
-                <div>92</div>
-                <div className="active">96</div>
+                <div className="range-8">8</div>
+                <div className="range-8">16</div>
+                <div className="range-8">24</div>
+                <div className="range-8">32</div>
+                <div className="range-16">48</div>
+                <div className="range-48">96</div>
             </th>
             <th id="damage" className="header">Dam.</th>
             <th id="burst" className="header">B</th>
@@ -101,7 +83,6 @@ function Band(bandName, band) {
 }
 
 function Mod(mod) {
-  console.log(mod);
   if (mod > 0) {
     return RANGE_GOOD;
   }
