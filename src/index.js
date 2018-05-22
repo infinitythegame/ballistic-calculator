@@ -6,5 +6,10 @@ import {GhulamFO, Intruder} from './data/units';
 import Calculator from './components/Calculator';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Calculator shooter={GhulamFO} target={Intruder} />, document.getElementById('root'));
+const DEFAULT_RANGE = 24;
+
+ReactDOM.render(
+  <Calculator shooter={GhulamFO} target={Intruder} defaultRange={DEFAULT_RANGE} />,
+  document.getElementById('root')
+);
 registerServiceWorker();

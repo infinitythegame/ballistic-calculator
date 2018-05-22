@@ -74,6 +74,7 @@ th.rangeBands div {
 
 .rangeBands .band {
   border-right: 1px solid #000;
+  color: #000;
 }
 
 .rangeBands .range-8 {
@@ -88,6 +89,11 @@ th.rangeBands div {
   grid-column: span 6;
 }
 
+.outOfRange {
+  filter: brightness(0.4);
+}
+
+
 .rangeBands .range-32 {
   grid-column: span 8;
 }
@@ -96,21 +102,19 @@ th.rangeBands div {
 }
 
 .rangeBands .good {
-  background-color: green;
+  background-color: #3fa535;
 }
 
 .rangeBands .zero {
-  background-color: blue;
+  background-color: #009fe3;
 }
 
 .rangeBands .bad {
-  background-color: yellow;
-  color: #000;
+  background-color: #fcc002;
 }
 
 .rangeBands .worst {
-  background-color: red;
-  color: #000;
+  background-color: #cd171a;
 }
 
 #cover {

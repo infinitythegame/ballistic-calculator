@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import Rangefinder from './Rangefinder';
+
+
 const RANGE_GOOD = 'good';
 const RANGE_ZERO = 'zero';
 const RANGE_BAD = 'bad';
@@ -27,8 +30,11 @@ export default class Profile extends Component {
           </tr>
         </thead>
         <tbody>
-          <WeaponsProfiles weapons={this.props.weapons} />
+          <WeaponsProfiles weapons={this.props.weapons} currentRange={this.props.currentRange} />
         </tbody>
+        <tfoot>
+          <Rangefinder currentRange={this.props.currentRange} />
+        </tfoot>
       </table>
     );
   }
@@ -37,7 +43,7 @@ export default class Profile extends Component {
 function WeaponsProfiles(props) {
   return Array.from(props.weapons).map((weapon) => {
     return (
-      <Weapon key={weapon.name} weapon={weapon} />
+      <Weapon key={weapon.name} weapon={weapon} currentRange={props.currentRange} />
     );
   });
 }
@@ -45,14 +51,15 @@ function WeaponsProfiles(props) {
 function Weapon(props) {
   return Array.from(props.weapon.modes).map((mode) => {
     return (
-      <Mode mode={mode} name={props.weapon.name} />
+      <Mode mode={mode} name={props.weapon.name} currentRange={props.currentRange} />
     )
   });
 }
 
 function Mode(props) {
+  const outOfRange = OutOfRange(props.mode, props.currentRange);
   return (
-    <tr key="{props.name}">
+    <tr className={outOfRange} key="{props.name}">
       <td className="Weapon-name">{props.name}</td>
       <td className="rangeBands">
         <Range ranges={props.mode.range} />
@@ -72,7 +79,7 @@ function Range(props) {
 }
 
 function Band(bandName, band) {
-  const classes = new Array();
+  const classes = [];
   classes.push('band');
   classes.push(bandName);
   classes.push('range-' + band.length);
@@ -80,6 +87,10 @@ function Band(bandName, band) {
   return (
     <div key={bandName} className={classes.join(' ')}>{band.mod.toString()}</div>
   );
+}
+
+function OutOfRange(mode, distance) {
+  return (undefined === mode.inRange(distance)) ? 'outOfRange': '';
 }
 
 function Mod(mod) {
