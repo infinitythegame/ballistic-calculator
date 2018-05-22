@@ -11,7 +11,7 @@ export default function Cover (props) {
         </div>
         <div>
         <label htmlFor="exposed">Out of cover</label>
-        <input type="radio" name="cover" id="exposed" value="no" onChange={props.onChange} checked={false === props.cover} />
+        <input type="radio" name="cover" id="exposed" value="no" onChange={props.onCoverChange} checked={false === props.cover} />
         </div>
       </div>
     </fieldset>

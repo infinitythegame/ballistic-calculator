@@ -83,7 +83,9 @@ th.rangeBands div {
 }
 
 .rangeBands .band {
-  border-right: 1px solid #000;
+  border-width: 1px 1px 1px 0px;
+  border-color: #000;
+  border-style: solid;
   color: #000;
 }
 
@@ -127,6 +129,10 @@ th.rangeBands div {
   background-color: #cd171a;
 }
 
+#rangeFinder {
+  width: 100%;
+}
+
 #cover {
   display: grid;
   margin: 0;
@@ -142,9 +148,13 @@ th.rangeBands div {
   background-size: contain;
   background-repeat: no-repeat;
   height: 100%;
-  text-align: center;
+
 }
 
+#cover div {
+  text-align: center;
+  align-items: center;
+}
 #result {
   display: grid;
   text-align: center;

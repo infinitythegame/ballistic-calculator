@@ -33,7 +33,7 @@ export default class Profile extends Component {
           <WeaponsProfiles weapons={this.props.weapons} currentRange={this.props.currentRange} />
         </tbody>
         <tfoot>
-          <Rangefinder currentRange={this.props.currentRange} />
+          <Rangefinder currentRange={this.props.currentRange} onRangeChange={this.props.onRangeChange} />
         </tfoot>
       </table>
     );

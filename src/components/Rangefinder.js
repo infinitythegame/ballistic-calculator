@@ -5,8 +5,8 @@ export default class Rangefinder extends Component {
     return (
       <tr>
         <td>{this.props.currentRange}</td>
-        <td>Range</td>
-        <td colspan="4"></td>
+        <td><input type="range" min="0" max="95.9" onChange={this.props.onRangeChange} defaultValue={this.props.currentRange} id="rangeFinder" /></td>
+        <td colSpan="4"></td>
       </tr>
     );
   }
