@@ -1,5 +1,12 @@
 html, body {
+  color: #fff;
+  background-color: #000;
   font-family: 'Righteous', sans-serif;
+  background-image: url('/img/fondohalo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  margin: 0;
 }
 
 #Calculator {
@@ -9,6 +16,9 @@ html, body {
 .trooper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color:rgba(0, 0, 0, 0.5);
+  margin-bottom: 12px;
+  align-items: center;
 }
 
 .profile {
@@ -27,7 +37,7 @@ html, body {
 
 #weapons {
   width: 100%;
-  background-color: #000;
+  background-color:rgba(0, 0, 0, 0.5);
 }
 
 #weapons th {
